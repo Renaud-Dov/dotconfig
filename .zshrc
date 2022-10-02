@@ -72,7 +72,10 @@ ZSH_THEME="bureau"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
 	zsh-autosuggestions
-	history)
+	history
+	web-search
+	copyfile
+)
 
 source $ZSH/oh-my-zsh.sh
 
