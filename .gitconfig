@@ -8,35 +8,15 @@
 	status = auto
 [commit]
 	verbose = true
-[pull]
-	rebase = true
-[branch]
-	autosetuprebase = always
-[push]
-	default = simple
-[rebase]
-	autoSquash = true
-	autoStash = true
-[sendemail]
-	smtpencryption = tls
-	smtpserver = smtp.office365.com
-	smtpserverport = 587
-	smtpuser = firstname.lastname@epita.fr
+	# gpgsign = true
+# [gpg]
+#     program = gpg
+#     tty = /dev/ttys000
 [user]
-	name = Renaud-Dov DEVERS
+	name = Dov DEVERS
 	email = renaud-dov.devers@epita.fr
 
 [alias]
-	# commit-status: generate a commit with message from git-status (staged changes).
-	# Source: https://gist.github.com/erikw/654386d35ecfdb0354cd2b71763f19ae
-	# Explanation:
-	# - Get only staged changes
-	# - Ignore changes in working area (2nd letter, the Y in XY as explained in $(git help status))
-	# - + split label and file path to separate lines so we can process the labels separately
-	# - Keep only the first label using awk
-	# - Add newline before each label section so we later can truncate \n to put everything on one line
-	# - Make labels human readable e.g. M -> Modified
-	# - Put everything on one line and trim leading & trailing whitespaces
 	commit-st = !" \
 	        TMPFILE=$(mktemp /tmp/git-commit-status-message.XXX); \
 		git status --porcelain \
